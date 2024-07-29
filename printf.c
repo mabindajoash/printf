@@ -21,10 +21,9 @@ int _printf(const char *format, ...)
 			write(1, format, 1);
 			counter++;
 		}
-		else
-			format++;
-		if (*format == '%')
+		else 
 		{
+			format++;
 			switch(*format)
 			{
 				case ('%'):
