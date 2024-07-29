@@ -23,29 +23,41 @@ int _printf(const char *format, ...)
 		}
 		else
 			format++;
-		switch(*format)
+		if (*format == '%')
 		{
-			case ('%'):
-				write(1, format, 1);
-				counter++;
-				break;
-			case ('c'):
-				name = va_arg(print, int);
-				write(1, &name, 1);
-				counter++;
-				break;
-			case ('s'):
-				names = va_arg(print, char*);
-				if (*names != '\0')
-				{
-					write(1, names, strlen(names));
-					counter += strlen(names);
-				}
-				break;
+			switch(*format)
+			{
+				case ('%'):
+					write(1, format, 1);
+					counter++;
+					break;
+				case ('c'):
+					name = va_arg(print, int);
+					write(1, &name, 1);
+					counter++;
+					break;
+				case ('s'):
+					names = va_arg(print, char*);
+					if (names != NULL)
+					{
+						write(1, names, strlen(names));
+						counter += strlen(names);
+					}
+					else
+					{
+						write(1, "(null)", 6);
+						counter += 6;
+					}
+					break;
+				default:
+					write(1, "%", 1);
+					write(1, format, 1);
+					counter += 2;
+					break;
+			}
 		}
 		format++;
 	}
 	va_end(print);
 	return (counter);
-
 }
