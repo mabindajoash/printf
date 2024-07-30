@@ -8,5 +8,5 @@ int _printf(const char *format, ...);
 int process_format(const char *format, va_list print);
 int write_char(char c);
 int write_string(char *str);
-
+int calculate_lenght(char *str);
 #endif
