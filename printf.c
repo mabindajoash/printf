@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '\0')
 			{
-				write_char("error");
+				write_string("error");
 				return (-1);
 			}
 			else
