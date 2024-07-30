@@ -11,6 +11,7 @@ int process_format(const char *format, va_list print)
 	char name;
 	char *names;
 	int num;
+	int bin;
 
 	switch (*format)
 	{
@@ -29,6 +30,10 @@ int process_format(const char *format, va_list print)
 		case ('d'):
 			num = va_arg(print, int);
 			counter += integer(num);
+			break;
+		case ('b'):
+			bin = va_arg(print, int);
+			counter += binary(bin);
 			break;
 		default:
 			write_char('%');

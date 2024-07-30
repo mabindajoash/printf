@@ -4,10 +4,12 @@
 #include <string.h>
 #include <stdio.h>
 #include <unistd.h>
+#define BUFFER_SIZE [1024];
 int _printf(const char *format, ...);
 int process_format(const char *format, va_list print);
 int write_char(char c);
 int write_string(char *str);
 int integer(int num);
+int binary(int number);
 int calculate_lenght(char *str);
 #endif
