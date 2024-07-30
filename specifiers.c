@@ -6,7 +6,8 @@
   */
 int write_char(char c)
 {
-	return (write(1, &c, 1));
+	(write(1, &c, 1));
+	return (1);
 }
 /**
   * calculate_lenght - calculates the lenght of the string
@@ -16,6 +17,7 @@ int write_char(char c)
 int calculate_lenght(char *str)
 {
 	int len = 0;
+
 	while (str[len])
 		len++;
 	return (len);
