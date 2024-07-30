@@ -21,7 +21,10 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
-			counter += process_format(format, print);
+			if (*format == '\0')
+				break;
+			else 
+				counter += process_format(format, print);
 		}
 		format++;
 	}
