@@ -30,6 +30,7 @@ int integer(int num)
 		buffer[i - 1 - j] = buffer[j];
 		buffer[j] = temp;
 	}
+	buffer[i] = '\0';
 	write_string(buffer);
 	return (calculate_lenght(buffer) + lenght);
 }
