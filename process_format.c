@@ -10,6 +10,7 @@ int process_format(const char *format, va_list print)
 	int counter = 0;
 	char name;
 	char *names;
+	int num;
 
 	switch (*format)
 	{
@@ -23,6 +24,11 @@ int process_format(const char *format, va_list print)
 		case ('s'):
 			names = va_arg(print, char*);
 			counter += write_string(names);
+			break;
+		case ('i'):
+		case ('d'):
+			num = va_arg(print, int);
+			counter += integer(num);
 			break;
 		default:
 			write_char('%');
