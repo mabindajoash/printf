@@ -22,7 +22,5 @@ int write_string(char *names)
 		return (strlen(names));
 	}
 	else
-	{
-		return (write(1, "null", 6));
-	}
+		return (0);
 }
