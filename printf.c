@@ -16,8 +16,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format != '%')
 		{
-			write_char(*format);
-			counter++;
+			counter += write_char(*format);
 		}
 		else
 		{
@@ -28,4 +27,3 @@ int _printf(const char *format, ...)
 	}
 	va_end(print);
 	return (counter);
-}
