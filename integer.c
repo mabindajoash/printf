@@ -18,12 +18,11 @@ int integer(int num)
 		num = -num;
 		lenght++;
 	}
-	do
-	{
+	do{
 		buffer[i] = (num % 10) + '0';
 		num = num / 10;
 		i++;
-	}while (num != 0);
+	} while (num != 0);
 	for (j = 0; j < i / 2; j++)
 	{
 		temp = buffer[i - 1 - j];
