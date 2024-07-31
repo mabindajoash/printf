@@ -34,12 +34,7 @@ int process_format(const char *format, va_list print)
 			break;
 		case ('b'):
 			bin = va_arg(print, int);
-			if (bin > 0)
-				counter += binary(bin);
-			else
-			{
-				return (0);
-			}
+			counter += binary(bin);
 			break;
 		case ('u'):
 			unum = va_arg(print, int);
