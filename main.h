@@ -10,7 +10,7 @@ int process_format(const char *format, va_list print);
 int write_char(char c);
 int write_string(char *str);
 int integer(int num);
-int binary(int number);
+int binary(unsigned int number);
 int unsigned_integer(unsigned int number);
 char *reverse_string(char *buffer, int size);
 int hex(unsigned int num);

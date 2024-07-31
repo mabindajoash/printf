@@ -11,7 +11,7 @@ int process_format(const char *format, va_list print)
 	char name;
 	char *names;
 	int num;
-	int bin;
+	unsigned int bin;
 	unsigned int hexadecimal;
 	unsigned int unum;
 	unsigned int HEXADECIMAL;
@@ -36,7 +36,7 @@ int process_format(const char *format, va_list print)
 			counter += integer(num);
 			break;
 		case ('b'):
-			bin = va_arg(print, int);
+			bin = va_arg(print, unsigned int);
 			counter += binary(bin);
 			break;
 		case ('u'):

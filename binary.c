@@ -4,30 +4,21 @@
   * @number: Number to be converted
   * Return: number of bytes
   */
-int binary(int number)
+int binary(unsigned int number)
 {
 	char buffer[12];
 	int i = 0;
-	int j;
-	char temp;
 
 	if (number == 0)
 	{
-		write_char('0');
-		return (1);
+	return (write_char('0'));
 	}
-	while (number > 0)
+	while (number)
 	{
 		buffer[i++] = (number % 2) + '0';
-		number = number / 2;
-	}
-	for (j = 0; j < i / 2; j++)
-	{
-		temp = buffer[j];
-		buffer[j] = buffer[i - 1 - j];
-		buffer[i - 1 - j] = temp;
+		number /= 2;
 	}
 	buffer[i] = '\0';
-	(write_string(buffer));
-	return (calculate_lenght(buffer));
+	reverse_string(buffer, i);
+	return (write_string(buffer));
 }

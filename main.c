@@ -10,6 +10,7 @@ int main(void)
 	_printf("%u\n", num);
 	_printf("%o\n", ui);
 	_printf("%x\n", num);
+	_printf("%b\n",num);
 	_printf("%X\n", num);
 	return (0);
 }
