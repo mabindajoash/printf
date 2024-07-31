@@ -38,8 +38,7 @@ int process_format(const char *format, va_list print)
 				counter += binary(bin);
 			else
 			{
-				write_string("error");
-				return (5);
+				return (0);
 			}
 			break;
 		case ('u'):
