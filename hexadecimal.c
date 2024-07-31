@@ -58,7 +58,6 @@ char *reverse_string(char *buffer, int size)
 		buffer[i] = buffer[size - i - 1];
 		buffer[size - i - 1] = temp;
 	}
-	buffer[size] = '\0';
 	return (buffer);
 }
 /**
