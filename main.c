@@ -2,9 +2,13 @@
 #include <limits.h>
 int main(void)
 {
-	unsigned int ui = ui = (unsigned int)INT_MAX + 1024;
+	int num = 176;
+	unsigned int ui;
 
-	_printf("Unsigned:[%u]\n", ui);
-	_printf("my dog has a puppy%sonly", " ");
+	ui = (unsigned int)INT_MAX + 1024;
+	printf("%d\n", num);
+	_printf("%o\n", ui);
+	_printf("%x\n", num);
+	_printf("%X\n", num);
 	return (0);
 }

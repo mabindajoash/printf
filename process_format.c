@@ -12,7 +12,10 @@ int process_format(const char *format, va_list print)
 	char *names;
 	int num;
 	int bin;
+	unsigned int hexadecimal;
 	unsigned int unum;
+	unsigned int HEXADECIMAL;
+	unsigned int onum;
 
 	switch (*format)
 	{
@@ -37,8 +40,20 @@ int process_format(const char *format, va_list print)
 			counter += binary(bin);
 			break;
 		case ('u'):
-			unum = va_arg(print, int);
+			unum = va_arg(print, unsigned int);
 			counter += unsigned_integer(unum);
+			break;
+		case ('x'):
+			hexadecimal = va_arg(print, unsigned int);
+			counter += hex(hexadecimal);
+			break;
+		case ('X'):
+			HEXADECIMAL = va_arg(print, unsigned int);
+			counter += HEX(HEXADECIMAL);
+			break;
+		case ('o'):
+			onum = va_arg(print, unsigned int);
+			counter += octal(onum);
 			break;
 		default:
 			write_char('%');

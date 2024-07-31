@@ -12,5 +12,9 @@ int write_string(char *str);
 int integer(int num);
 int binary(int number);
 int unsigned_integer(unsigned int number);
+char *reverse_string(char *buffer, int size);
+int hex(unsigned int num);
+int HEX(unsigned int num);
+int octal(unsigned int num);
 int calculate_lenght(char *str);
 #endif

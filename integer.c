@@ -7,9 +7,7 @@
 int integer(int num)
 {
 	int i = 0;
-	int j;
-	char temp;
-	char buffer[12];
+	char buffer[BUFFER_SIZE];
 	int lenght = 0;
 
 	if (num < 0)
@@ -23,13 +21,7 @@ int integer(int num)
 		num = num / 10;
 		i++;
 	} while (num != 0);
-	for (j = 0; j < i / 2; j++)
-	{
-		temp = buffer[i - 1 - j];
-		buffer[i - 1 - j] = buffer[j];
-		buffer[j] = temp;
-	}
-	buffer[i] = '\0';
+	reverse_string(buffer, i);
 	write_string(buffer);
 	return (calculate_lenght(buffer) + lenght);
 }
