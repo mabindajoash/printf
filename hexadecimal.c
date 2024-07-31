@@ -16,6 +16,7 @@ int unsigned_integer(unsigned int number)
 		buffer[i++] = (number % 10) + '0';
 		number /= 10;
 	}
+	buffer[i] = '\0';
 	reverse_string(buffer, i);
 	return (write_string(buffer));
 }
@@ -38,6 +39,7 @@ int hex(unsigned int num)
 		buffer[i++] = digit[num % 16];
 		num /= 16;
 	}
+	buffer[i] = '\0';
 	reverse_string(buffer, i);
 	return (write_string(buffer));
 }
@@ -58,7 +60,6 @@ char *reverse_string(char *buffer, int size)
 		buffer[i] = buffer[size - i - 1];
 		buffer[size - i - 1] = temp;
 	}
-	buffer[i] = '\0';
 	return (buffer);
 }
 /**
@@ -78,6 +79,7 @@ int HEX(unsigned int num)
 		buffer[i++] = digit[num % 16];
 		num /= 16;
 	}
+	buffer[i] = '\0';
 	reverse_string(buffer, i);
 	return (write_string(buffer));
 }
@@ -97,6 +99,7 @@ int octal(unsigned int num)
 		buffer[i++] = digit[num % 8];
 		num /= 8;
 	}
+	buffer[i] = '\0';
 	reverse_string(buffer, i);
 	return (write_string(buffer));
 }
