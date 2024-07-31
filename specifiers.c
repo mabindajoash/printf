@@ -29,11 +29,18 @@ int calculate_lenght(char *str)
   */
 int write_string(char *names)
 {
+	if (strcmp(names, " ") == 0)
+	{
+		return write(1, " ", 1);
+	}
 	if (names != NULL)
 	{
 		(write(1, names, calculate_lenght(names)));
 		return (calculate_lenght(names));
 	}
 	else
-		return (0);
+	{
+		write(1, "(null)", 6 );
+		return (6);
+	}
 }

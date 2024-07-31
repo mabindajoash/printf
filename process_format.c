@@ -12,6 +12,7 @@ int process_format(const char *format, va_list print)
 	char *names;
 	int num;
 	int bin;
+	unsigned int unum;
 
 	switch (*format)
 	{
@@ -33,7 +34,17 @@ int process_format(const char *format, va_list print)
 			break;
 		case ('b'):
 			bin = va_arg(print, int);
-			counter += binary(bin);
+			if (bin > 0)
+				counter += binary(bin);
+			else
+			{
+				write_string("error");
+				return (5);
+			}
+			break;
+		case ('u'):
+			unum = va_arg(print, int);
+			counter += unsigned_integer(unum);
 			break;
 		default:
 			write_char('%');
