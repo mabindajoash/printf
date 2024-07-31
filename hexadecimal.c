@@ -74,6 +74,8 @@ int HEX(unsigned int num)
 	int i = 0;
 	char buffer[BUFFER_SIZE];
 
+	if (num == 0)
+		return (write_char('0'));
 	while (num)
 	{
 		buffer[i++] = digit[num % 16];
@@ -94,6 +96,8 @@ int octal(unsigned int num)
 	int i = 0;
 	char buffer[BUFFER_SIZE];
 
+	if (num == 0)
+		return (write_char('0'));
 	while (num)
 	{
 		buffer[i++] = digit[num % 8];
