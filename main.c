@@ -12,5 +12,6 @@ int main(void)
 	_printf("%x\n", num);
 	_printf("%b\n",num);
 	_printf("%X\n", num);
+	_printf("%r\n", "where is my boy");
 	return (0);
 }

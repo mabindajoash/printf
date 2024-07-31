@@ -16,6 +16,7 @@ int process_format(const char *format, va_list print)
 	unsigned int unum;
 	unsigned int HEXADECIMAL;
 	unsigned int onum;
+	char *str;
 
 	switch (*format)
 	{
@@ -54,6 +55,12 @@ int process_format(const char *format, va_list print)
 		case ('o'):
 			onum = va_arg(print, unsigned int);
 			counter += octal(onum);
+			break;
+		case ('r'):
+			str = va_arg(print, char*);
+			write_string(reverse(str));
+			free(reverse(str));
+			counter += calculate_lenght(str);
 			break;
 		default:
 			write_char('%');

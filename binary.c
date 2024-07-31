@@ -10,9 +10,7 @@ int binary(unsigned int number)
 	int i = 0;
 
 	if (number == 0)
-	{
-	return (write_char('0'));
-	}
+		return (write_char('0'));
 	while (number)
 	{
 		buffer[i++] = (number % 2) + '0';
