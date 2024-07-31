@@ -21,6 +21,7 @@ int integer(int num)
 		num = num / 10;
 		i++;
 	} while (num != 0);
+	buffer[i] = '\0';
 	reverse_string(buffer, i);
 	write_string(buffer);
 	return (calculate_lenght(buffer) + lenght);
