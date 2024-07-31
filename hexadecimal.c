@@ -28,7 +28,8 @@ int hex(unsigned int num)
 {
 	int i = 0;
 	char buffer[BUFFER_SIZE];
-	char digit[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+	char digit[] = {'0', '1', '2', '3', '4', '5', '6', '7',
+			'8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
 	if (num == 0)
 		return (write_char('0'));
@@ -67,7 +68,8 @@ char *reverse_string(char *buffer, int size)
   */
 int HEX(unsigned int num)
 {
-	char digit[]= {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+	char digit[] = {'0', '1', '2', '3', '4', '5', '6', '7',
+			'8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 	int i = 0;
 	char buffer[BUFFER_SIZE];
 
